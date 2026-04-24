@@ -32,6 +32,18 @@ export const projects = [
     color:    '#105666',
   },
   {
+    id:       'song-popularity',
+    title:    'SONG POPULARITY',
+    subtitle: 'Spotify Track Analysis',
+    metric:   '114K Tracks',
+    tech:     ['XGBoost', 'FastAPI', 'Pandas', 'Seaborn'],
+    desc:     '114K Spotify tracks. Binary popularity classifier with FastAPI backend and interactive web frontend.',
+    longDesc: 'End-to-end ML pipeline predicting whether a Spotify track will be popular (popularity score > 50). Trained XGBoost, Random Forest, and Logistic Regression on 114,000+ tracks with audio features — danceability, energy, tempo, loudness, valence. Handles class imbalance via resampling. FastAPI backend exposes a /predict endpoint; HTML/JS frontend allows real-time song analysis. Evaluated with Accuracy, F1, Precision, Recall, and AUC-ROC.',
+    stats:    [['114K+','SPOTIFY TRACKS'],['XGBoost','BEST MODEL'],['FastAPI','DEPLOYED']],
+    color:    '#1DB954',
+    link:     'https://github.com/kriti2110/song-popularity-analysis',
+  },
+  {
     id:       'dualfusion',
     title:    'DUALFUSION',
     subtitle: 'Thyroid Ultrasound Seg.',
