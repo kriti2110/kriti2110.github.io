@@ -1,163 +1,181 @@
 import { motion } from 'framer-motion';
 
-// ── Anime Girl Head — Beautiful redesign ─────────────────────────────────────
+// ── Anime Girl Head — Cute & friendly redesign ───────────────────────────────
 export function AnimeGirl({ width = 150, height = 178 }) {
   return (
-    <svg width={width} height={height} viewBox="0 0 200 238" xmlns="http://www.w3.org/2000/svg">
+    <svg width={width} height={height} viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <radialGradient id="ag-iris" cx="38%" cy="32%" r="65%">
-          <stop offset="0%"   stopColor="#D09AE8" />
-          <stop offset="45%"  stopColor="#9260C8" />
-          <stop offset="100%" stopColor="#3a1060" />
+        {/* Bright sky-blue iris — friendly, not spooky */}
+        <radialGradient id="ag2-iris" cx="35%" cy="28%" r="70%">
+          <stop offset="0%"   stopColor="#B8ECFF" />
+          <stop offset="40%"  stopColor="#50BFEE" />
+          <stop offset="100%" stopColor="#1878B4" />
         </radialGradient>
-        <radialGradient id="ag-skin" cx="50%" cy="35%" r="60%">
-          <stop offset="0%"   stopColor="#FFE8CE" />
-          <stop offset="100%" stopColor="#FFCBA4" />
+        <radialGradient id="ag2-skin" cx="48%" cy="32%" r="58%">
+          <stop offset="0%"   stopColor="#FFF0DC" />
+          <stop offset="100%" stopColor="#FFD5A8" />
         </radialGradient>
-        <radialGradient id="ag-blush" cx="50%" cy="50%" r="50%">
-          <stop offset="0%"   stopColor="#FFAAA0" stopOpacity="0.7" />
-          <stop offset="100%" stopColor="#FFAAA0" stopOpacity="0"   />
+        <radialGradient id="ag2-blush" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stopColor="#FFB8B0" stopOpacity="0.75" />
+          <stop offset="100%" stopColor="#FFB8B0" stopOpacity="0"    />
         </radialGradient>
-        <radialGradient id="ag-hair-hi" cx="38%" cy="20%" r="55%">
-          <stop offset="0%"   stopColor="#5a2818" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="#2C1008" stopOpacity="0"    />
+        <radialGradient id="ag2-hair" cx="40%" cy="18%" r="55%">
+          <stop offset="0%"   stopColor="#7a3820" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#3a1408" stopOpacity="0"   />
         </radialGradient>
       </defs>
 
       {/* ── Back hair ── */}
-      <ellipse cx="100" cy="108" rx="74" ry="86" fill="#2C1008" />
-      {/* hair sheen */}
-      <ellipse cx="100" cy="78"  rx="56" ry="50" fill="url(#ag-hair-hi)" />
+      <ellipse cx="100" cy="106" rx="76" ry="88" fill="#3a1408" />
+      <ellipse cx="100" cy="76"  rx="58" ry="52" fill="url(#ag2-hair)" />
 
       {/* ── Neck ── */}
-      <rect x="88" y="183" width="24" height="26" rx="7" fill="url(#ag-skin)" />
+      <rect x="88" y="182" width="24" height="24" rx="7" fill="url(#ag2-skin)" />
 
-      {/* ── Clothing ── */}
-      <path d="M56 207 Q74 196 100 200 Q126 196 144 207 Q132 230 100 234 Q68 230 56 207Z" fill="#839958" />
-      <path d="M56 207 Q74 196 100 200 Q126 196 144 207 Q132 214 100 215 Q68 214 56 207Z" fill="#105666" />
-      {/* V-collar */}
-      <path d="M90 200 L100 218 L110 200 Q100 197 90 200Z" fill="#F7F4D5" opacity="0.35" />
+      {/* ── Cute outfit ── */}
+      <path d="M55 205 Q73 194 100 198 Q127 194 145 205 Q133 228 100 232 Q67 228 55 205Z" fill="#D3968C" />
+      <path d="M55 205 Q73 194 100 198 Q127 194 145 205 Q133 212 100 214 Q67 212 55 205Z" fill="#C4806E" />
+      {/* Collar */}
+      <path d="M91 198 L100 214 L109 198 Q100 196 91 198Z" fill="#F7F4D5" opacity="0.4" />
+      {/* Bow on outfit */}
+      <path d="M89 200 Q100 195 111 200 Q105 204 100 205 Q95 204 89 200Z" fill="#839958" />
 
-      {/* ── Face ── */}
-      <ellipse cx="100" cy="128" rx="65" ry="74" fill="url(#ag-skin)" />
+      {/* ── Face — round & soft ── */}
+      <ellipse cx="100" cy="126" rx="66" ry="72" fill="url(#ag2-skin)" />
 
       {/* ── Ears ── */}
-      <ellipse cx="36"  cy="128" rx="10" ry="14" fill="#FFCBA4" />
-      <ellipse cx="36"  cy="128" rx="5.5" ry="8.5" fill="#F0B090" />
-      <ellipse cx="164" cy="128" rx="10" ry="14" fill="#FFCBA4" />
-      <ellipse cx="164" cy="128" rx="5.5" ry="8.5" fill="#F0B090" />
+      <ellipse cx="35"  cy="126" rx="10" ry="13" fill="#FFD5A8" />
+      <ellipse cx="35"  cy="126" rx="5.5" ry="8" fill="#F2C090" />
+      <ellipse cx="165" cy="126" rx="10" ry="13" fill="#FFD5A8" />
+      <ellipse cx="165" cy="126" rx="5.5" ry="8" fill="#F2C090" />
 
-      {/* Star earrings */}
-      <g transform="translate(23,122)">
-        <path d="M0,-6 L1.4,-1.4 L6,0 L1.4,1.4 L0,6 L-1.4,1.4 L-6,0 L-1.4,-1.4 Z" fill="#D3968C" />
-        <circle cx="0" cy="0" r="2" fill="#F7F4D5" />
+      {/* Tiny star earrings */}
+      <g transform="translate(22,120)">
+        <path d="M0,-5.5 L1.2,-1.2 L5.5,0 L1.2,1.2 L0,5.5 L-1.2,1.2 L-5.5,0 L-1.2,-1.2 Z" fill="#D3968C" />
       </g>
-      <g transform="translate(177,122)">
-        <path d="M0,-6 L1.4,-1.4 L6,0 L1.4,1.4 L0,6 L-1.4,1.4 L-6,0 L-1.4,-1.4 Z" fill="#D3968C" />
-        <circle cx="0" cy="0" r="2" fill="#F7F4D5" />
+      <g transform="translate(178,120)">
+        <path d="M0,-5.5 L1.2,-1.2 L5.5,0 L1.2,1.2 L0,5.5 L-1.2,1.2 L-5.5,0 L-1.2,-1.2 Z" fill="#D3968C" />
       </g>
 
-      {/* ── Front bangs ── */}
-      <path d="M27 102 Q37 36 100 28 Q163 36 173 102 Q148 62 100 68 Q52 62 27 102Z" fill="#2C1008" />
-      {/* bang sheen */}
-      <path d="M50 52 Q78 40 100 46 Q122 40 150 52 Q140 40 100 37 Q60 40 50 52Z" fill="#4a2015" opacity="0.38" />
+      {/* ── Front bangs — softer shape ── */}
+      <path d="M28 100 Q38 34 100 26 Q162 34 172 100 Q150 60 100 66 Q50 60 28 100Z" fill="#3a1408" />
+      <path d="M52 50 Q76 38 100 44 Q124 38 148 50 Q138 38 100 35 Q62 38 52 50Z" fill="#6a2e12" opacity="0.4" />
+      {/* Little wispy ends on bangs for softness */}
+      <path d="M28 100 Q22 84 26 72 Q30 80 28 100Z" fill="#3a1408" />
+      <path d="M172 100 Q178 84 174 72 Q170 80 172 100Z" fill="#3a1408" />
 
-      {/* ── Side locks ── */}
-      <path d="M27 102 Q10 154 16 202 Q35 190 40 158 Q34 128 27 102Z" fill="#2C1008" />
-      <path d="M173 102 Q190 154 184 202 Q165 190 160 158 Q166 128 173 102Z" fill="#2C1008" />
+      {/* Side locks */}
+      <path d="M28 100 Q12 150 18 198 Q36 186 42 155 Q36 126 28 100Z" fill="#3a1408" />
+      <path d="M172 100 Q188 150 182 198 Q164 186 158 155 Q164 126 172 100Z" fill="#3a1408" />
 
-      {/* ────── LEFT EYE ────── */}
-      {/* Sclera */}
-      <ellipse cx="71"  cy="121" rx="21" ry="25" fill="white" />
-      {/* Upper lid shadow */}
-      <ellipse cx="71"  cy="114" rx="21" ry="15" fill="#ece4f8" opacity="0.45" />
-      {/* Iris */}
-      <ellipse cx="71"  cy="124" rx="17" ry="21" fill="url(#ag-iris)" />
-      {/* Pupil */}
-      <ellipse cx="71"  cy="126" rx="9.5" ry="13" fill="#12002a" />
-      {/* Main highlight */}
-      <ellipse cx="62"  cy="114" rx="6"   ry="7.5" fill="white" opacity="0.96" />
+      {/* ══════ LEFT EYE — large, bright, sparkly ══════ */}
+      {/* Sclera — big white area, very visible */}
+      <ellipse cx="70" cy="118" rx="22" ry="26" fill="white" />
+      {/* Soft upper-lid tint */}
+      <ellipse cx="70" cy="110" rx="22" ry="14" fill="#d8f4ff" opacity="0.35" />
+      {/* Iris — bright blue */}
+      <ellipse cx="70" cy="121" rx="17" ry="20" fill="url(#ag2-iris)" />
+      {/* Pupil — SMALL so iris stays bright */}
+      <ellipse cx="70" cy="122" rx="6"  ry="8"  fill="#0a1a30" />
+      {/* Big main star highlight top-left */}
+      <ellipse cx="61" cy="111" rx="6"  ry="7.5" fill="white" opacity="0.98" />
       {/* Secondary highlight */}
-      <circle  cx="80"  cy="119" r="3.5"            fill="white" opacity="0.78" />
-      {/* Glint */}
-      <circle  cx="77"  cy="130" r="2"              fill="white" opacity="0.42" />
-      {/* Upper lash mass */}
-      <path d="M50 113 Q71 101 92 113 Q84 103 71 102 Q58 103 50 113Z" fill="#12002a" />
-      {/* Individual lashes */}
-      <line x1="54" y1="112" x2="50"  y2="104" stroke="#12002a" strokeWidth="1.6" strokeLinecap="round" />
-      <line x1="62" y1="107" x2="60"  y2="99"  stroke="#12002a" strokeWidth="1.6" strokeLinecap="round" />
-      <line x1="71" y1="105" x2="71"  y2="97"  stroke="#12002a" strokeWidth="1.6" strokeLinecap="round" />
-      <line x1="80" y1="107" x2="82"  y2="99"  stroke="#12002a" strokeWidth="1.6" strokeLinecap="round" />
-      <line x1="88" y1="112" x2="92"  y2="104" stroke="#12002a" strokeWidth="1.6" strokeLinecap="round" />
-      {/* Lower lash line */}
-      <path d="M52 136 Q71 142 90 136" stroke="#12002a" strokeWidth="1.3" fill="none" strokeLinecap="round" />
+      <circle  cx="79" cy="115" r="3.8"           fill="white" opacity="0.82" />
+      {/* Tiny sparkle dot */}
+      <circle  cx="74" cy="127" r="2"             fill="white" opacity="0.55" />
+      {/* Star sparkle in iris */}
+      <g transform="translate(63,118) scale(0.9)">
+        <path d="M0,-3.5 L0.8,-0.8 L3.5,0 L0.8,0.8 L0,3.5 L-0.8,0.8 L-3.5,0 L-0.8,-0.8 Z"
+          fill="white" opacity="0.55" />
+      </g>
+      {/* Upper lash — delicate, not heavy */}
+      <path d="M49 111 Q70 100 91 111 Q83 102 70 101 Q57 102 49 111Z" fill="#2a1008" />
+      {/* Fine lashes */}
+      <line x1="53" y1="110" x2="50"  y2="102" stroke="#2a1008" strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="61" y1="105" x2="60"  y2="97"  stroke="#2a1008" strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="70" y1="103" x2="70"  y2="95"  stroke="#2a1008" strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="79" y1="105" x2="81"  y2="97"  stroke="#2a1008" strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="87" y1="110" x2="90"  y2="102" stroke="#2a1008" strokeWidth="1.4" strokeLinecap="round" />
+      {/* Lower lash — very subtle */}
+      <path d="M51 133 Q70 138 89 133" stroke="#2a1008" strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.6" />
 
-      {/* ────── RIGHT EYE ────── */}
-      <ellipse cx="129" cy="121" rx="21" ry="25" fill="white" />
-      <ellipse cx="129" cy="114" rx="21" ry="15" fill="#ece4f8" opacity="0.45" />
-      <ellipse cx="129" cy="124" rx="17" ry="21" fill="url(#ag-iris)" />
-      <ellipse cx="129" cy="126" rx="9.5" ry="13" fill="#12002a" />
-      <ellipse cx="120" cy="114" rx="6"   ry="7.5" fill="white" opacity="0.96" />
-      <circle  cx="138" cy="119" r="3.5"            fill="white" opacity="0.78" />
-      <circle  cx="135" cy="130" r="2"              fill="white" opacity="0.42" />
-      <path d="M108 113 Q129 101 150 113 Q142 103 129 102 Q116 103 108 113Z" fill="#12002a" />
-      <line x1="112" y1="112" x2="108" y2="104" stroke="#12002a" strokeWidth="1.6" strokeLinecap="round" />
-      <line x1="120" y1="107" x2="118" y2="99"  stroke="#12002a" strokeWidth="1.6" strokeLinecap="round" />
-      <line x1="129" y1="105" x2="129" y2="97"  stroke="#12002a" strokeWidth="1.6" strokeLinecap="round" />
-      <line x1="138" y1="107" x2="140" y2="99"  stroke="#12002a" strokeWidth="1.6" strokeLinecap="round" />
-      <line x1="146" y1="112" x2="150" y2="104" stroke="#12002a" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M110 136 Q129 142 148 136" stroke="#12002a" strokeWidth="1.3" fill="none" strokeLinecap="round" />
+      {/* ══════ RIGHT EYE ══════ */}
+      <ellipse cx="130" cy="118" rx="22" ry="26" fill="white" />
+      <ellipse cx="130" cy="110" rx="22" ry="14" fill="#d8f4ff" opacity="0.35" />
+      <ellipse cx="130" cy="121" rx="17" ry="20" fill="url(#ag2-iris)" />
+      <ellipse cx="130" cy="122" rx="6"  ry="8"  fill="#0a1a30" />
+      <ellipse cx="121" cy="111" rx="6"  ry="7.5" fill="white" opacity="0.98" />
+      <circle  cx="139" cy="115" r="3.8"           fill="white" opacity="0.82" />
+      <circle  cx="134" cy="127" r="2"             fill="white" opacity="0.55" />
+      <g transform="translate(123,118) scale(0.9)">
+        <path d="M0,-3.5 L0.8,-0.8 L3.5,0 L0.8,0.8 L0,3.5 L-0.8,0.8 L-3.5,0 L-0.8,-0.8 Z"
+          fill="white" opacity="0.55" />
+      </g>
+      <path d="M109 111 Q130 100 151 111 Q143 102 130 101 Q117 102 109 111Z" fill="#2a1008" />
+      <line x1="113" y1="110" x2="110" y2="102" stroke="#2a1008" strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="121" y1="105" x2="120" y2="97"  stroke="#2a1008" strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="130" y1="103" x2="130" y2="95"  stroke="#2a1008" strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="139" y1="105" x2="141" y2="97"  stroke="#2a1008" strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="147" y1="110" x2="150" y2="102" stroke="#2a1008" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M111 133 Q130 138 149 133" stroke="#2a1008" strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.6" />
 
-      {/* ── Eyebrows (thin, arched) ── */}
-      <path d="M54 102 Q70 91 90 98"  stroke="#2C1008" strokeWidth="3.2" fill="none" strokeLinecap="round" />
-      <path d="M110 98 Q130 91 146 102" stroke="#2C1008" strokeWidth="3.2" fill="none" strokeLinecap="round" />
+      {/* ── Eyebrows — soft & friendly arch ── */}
+      <path d="M52 100 Q68 89 88 96"  stroke="#3a1408" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <path d="M112 96 Q132 89 148 100" stroke="#3a1408" strokeWidth="3" fill="none" strokeLinecap="round" />
 
-      {/* ── Nose ── */}
-      <path d="M96 149 Q100 156 104 149" stroke="#E8A880" strokeWidth="2.2" fill="none" strokeLinecap="round" />
-      <circle cx="96"  cy="149" r="2.2" fill="#E8A880" opacity="0.5" />
-      <circle cx="104" cy="149" r="2.2" fill="#E8A880" opacity="0.5" />
+      {/* ── Nose — tiny & cute ── */}
+      <path d="M96 144 Q100 150 104 144" stroke="#E8A070" strokeWidth="2" fill="none" strokeLinecap="round" />
 
-      {/* ── Mouth ── */}
-      <path d="M82 164 Q91 158 100 160 Q109 158 118 164" stroke="#C85050" strokeWidth="2.4" fill="none" strokeLinecap="round" />
-      <path d="M82 164 Q100 180 118 164" stroke="#C85050" strokeWidth="2.4" fill="none" strokeLinecap="round" />
-      <path d="M84 165 Q100 176 116 165 Q108 162 100 163 Q92 162 84 165Z" fill="#E88080" opacity="0.5" />
-      <ellipse cx="100" cy="173" rx="8" ry="3" fill="white" opacity="0.25" />
+      {/* ── Mouth — wide happy smile ── */}
+      {/* Main smile arc */}
+      <path d="M80 160 Q100 178 120 160" stroke="#D05060" strokeWidth="2.6" fill="none" strokeLinecap="round" />
+      {/* Lip fill with happy curve */}
+      <path d="M82 161 Q100 175 118 161 Q110 165 100 166 Q90 165 82 161Z" fill="#E87878" opacity="0.55" />
+      {/* Tiny teeth peek */}
+      <path d="M86 161 Q100 164 114 161 Q110 162 100 163 Q90 162 86 161Z" fill="white" opacity="0.7" />
+      {/* Lip highlight */}
+      <ellipse cx="100" cy="170" rx="9" ry="2.8" fill="white" opacity="0.22" />
+      {/* Happy cheek lift lines */}
+      <path d="M75 158 Q79 155 82 158" stroke="#E8A070" strokeWidth="1.2" fill="none" strokeLinecap="round" opacity="0.4" />
+      <path d="M118 158 Q121 155 125 158" stroke="#E8A070" strokeWidth="1.2" fill="none" strokeLinecap="round" opacity="0.4" />
 
-      {/* ── Blush ── */}
-      <ellipse cx="46"  cy="140" rx="21" ry="12" fill="url(#ag-blush)" />
-      <ellipse cx="154" cy="140" rx="21" ry="12" fill="url(#ag-blush)" />
-      <circle cx="40"  cy="138" r="2.8" fill="#FFAAA0" opacity="0.38" />
-      <circle cx="53"  cy="145" r="2"   fill="#FFAAA0" opacity="0.28" />
-      <circle cx="160" cy="138" r="2.8" fill="#FFAAA0" opacity="0.38" />
-      <circle cx="147" cy="145" r="2"   fill="#FFAAA0" opacity="0.28" />
+      {/* ── Blush — big, soft, rosy ── */}
+      <ellipse cx="44"  cy="138" rx="24" ry="13" fill="url(#ag2-blush)" />
+      <ellipse cx="156" cy="138" rx="24" ry="13" fill="url(#ag2-blush)" />
+      {/* Extra blush texture dots */}
+      <circle cx="36"  cy="136" r="3"   fill="#FFB8B0" opacity="0.35" />
+      <circle cx="50"  cy="143" r="2.2" fill="#FFB8B0" opacity="0.28" />
+      <circle cx="164" cy="136" r="3"   fill="#FFB8B0" opacity="0.35" />
+      <circle cx="150" cy="143" r="2.2" fill="#FFB8B0" opacity="0.28" />
 
-      {/* ── Big cute bow ── */}
-      <path d="M40 53 Q57 34 74 50 Q57 61 40 53Z"  fill="#D3968C" />
-      <path d="M74 50 Q91 34 74 50 Q57 61 74 67Z"  fill="#C4806E" />
-      {/* Bow sheen */}
-      <ellipse cx="55" cy="46" rx="8" ry="4" fill="white" opacity="0.18" transform="rotate(-22 55 46)" />
-      {/* Bow knot */}
-      <circle cx="74" cy="54" r="9.5" fill="#839958" />
-      <circle cx="74" cy="54" r="6"   fill="#F7F4D5" />
-      <circle cx="74" cy="54" r="3.5" fill="#D3968C" />
+      {/* ── Big fluffy bow ── */}
+      <path d="M36 52 Q55 32 72 49 Q55 60 36 52Z"  fill="#D3968C" />
+      <path d="M72 49 Q89 32 72 49 Q55 60 72 66Z"  fill="#C07868" />
+      {/* Bow shine */}
+      <ellipse cx="52" cy="44" rx="9" ry="4.5" fill="white" opacity="0.2" transform="rotate(-20 52 44)" />
+      {/* Bow center */}
+      <circle cx="72" cy="53" r="10"  fill="#839958" />
+      <circle cx="72" cy="53" r="6.5" fill="#F7F4D5" />
+      <circle cx="72" cy="53" r="3.8" fill="#D3968C" />
+      <circle cx="71" cy="51" r="1.2" fill="white" opacity="0.6" />
 
       {/* ── Hair clip ── */}
-      <rect x="118" y="60" width="20" height="10" rx="4" fill="#105666" />
-      <rect x="120" y="62" width="16" height="6"  rx="2.5" fill="#839958" />
-      <circle cx="128" cy="65" r="2" fill="#F7F4D5" opacity="0.6" />
+      <rect x="118" y="58" width="20" height="10" rx="4"   fill="#105666" />
+      <rect x="120" y="60" width="16" height="6"  rx="2.5" fill="#839958" />
+      <circle cx="128" cy="63" r="2" fill="#F7F4D5" opacity="0.65" />
 
-      {/* ── Hair sparkles ── */}
-      <g transform="translate(27,38) scale(0.72)">
-        <path d="M0,-9 L2,-2 L9,0 L2,2 L0,9 L-2,2 L-9,0 L-2,-2 Z" fill="#D3968C" opacity="0.9" />
+      {/* ── Little sparkles in hair ── */}
+      <g transform="translate(26,36) scale(0.7)">
+        <path d="M0,-9 L2,-2 L9,0 L2,2 L0,9 L-2,2 L-9,0 L-2,-2 Z" fill="#D3968C" opacity="0.88" />
       </g>
-      <g transform="translate(163,44) scale(0.58)">
-        <path d="M0,-9 L2,-2 L9,0 L2,2 L0,9 L-2,2 L-9,0 L-2,-2 Z" fill="#839958" opacity="0.9" />
+      <g transform="translate(162,42) scale(0.55)">
+        <path d="M0,-9 L2,-2 L9,0 L2,2 L0,9 L-2,2 L-9,0 L-2,-2 Z" fill="#839958" opacity="0.88" />
       </g>
-      <g transform="translate(136,30) scale(0.45)">
-        <path d="M0,-9 L2,-2 L9,0 L2,2 L0,9 L-2,2 L-9,0 L-2,-2 Z" fill="#F7C1B5" opacity="0.85" />
+      <g transform="translate(136,28) scale(0.44)">
+        <path d="M0,-9 L2,-2 L9,0 L2,2 L0,9 L-2,2 L-9,0 L-2,-2 Z" fill="#B8ECFF" opacity="0.82" />
       </g>
-      <g transform="translate(50,28) scale(0.38)">
-        <path d="M0,-9 L2,-2 L9,0 L2,2 L0,9 L-2,2 L-9,0 L-2,-2 Z" fill="#C9B8FF" opacity="0.8" />
+      <g transform="translate(52,26) scale(0.36)">
+        <path d="M0,-9 L2,-2 L9,0 L2,2 L0,9 L-2,2 L-9,0 L-2,-2 Z" fill="#FFD5A8" opacity="0.75" />
       </g>
     </svg>
   );
