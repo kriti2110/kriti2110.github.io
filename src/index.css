@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: none;
+}
+
+* { cursor: none !important; }
+
+/* ── Gingham grid background ── */
+/* Overlapping H+V stripes at 50% opacity → intersections become ~75% = classic gingham crosshatch */
+.gingham {
+  background-color: #F7F4D5;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 17px,
+      rgba(131, 153, 88, 0.38) 17px,
+      rgba(131, 153, 88, 0.38) 34px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 17px,
+      rgba(131, 153, 88, 0.38) 17px,
+      rgba(131, 153, 88, 0.38) 34px
+    );
+}
+
+/* ── Retro window scrollbar ── */
+.retro-scroll::-webkit-scrollbar { width: 8px; }
+.retro-scroll::-webkit-scrollbar-track { background: #F7F4D5; border-left: 2px solid #0A3323; }
+.retro-scroll::-webkit-scrollbar-thumb { background: #839958; border: 2px solid #0A3323; }
+
+/* ── Pixel font helpers ── */
+.font-pixel { font-family: 'Press Start 2P', monospace; }
+.font-retro  { font-family: 'VT323', monospace; }
+
+/* ── Window title bar gradient ── */
+.win-titlebar {
+  background: linear-gradient(90deg, #839958 0%, #105666 50%, #0A3323 100%);
+}
+
+/* ── Desktop icon hover ── */
+.desktop-icon:hover .icon-label { text-decoration: underline; }
